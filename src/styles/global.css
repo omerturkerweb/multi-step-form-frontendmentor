@@ -56,3 +56,36 @@ body,
 .active-step {
   border: 1px solid var(--pastel-blue);
 }
+.input-default {
+  outline: none;
+  width: 85%;
+  border-radius: 7px;
+  border: 1px solid var(--light-gray);
+  padding: 10px 10px;
+  font-size: 14px;
+  transition: all 0.3s;
+  color: var(--marine-blue);
+}
+.input-default:hover {
+  border: 1px solid var(--purplish-blue);
+}
+.input-invalid {
+  outline: none;
+  width: 85%;
+  border-radius: 7px;
+  padding: 10px 10px;
+  font-size: 14px;
+  transition: all 0.3s;
+  color: var(--marine-blue);
+  border: 1px solid var(--strawberry-red);
+}
+.form-button {
+  background-color: var(--purplish-blue);
+  padding: 10px 20px;
+  color: var(--white);
+  border-radius: 7px;
+  transition: all 0.4s;
+}
+.form-button:hover {
+  background-color: var(--marine-blue);
+}

@@ -7,6 +7,15 @@ import Step4 from "../components/steps/step4/Step4";
 export const FormContext = createContext();
 
 export const Provider = ({ children }) => {
+  const [user, setUser] = useState({
+    name: "",
+    mail: "",
+    phone: 0,
+    plan: "",
+    planType: "",
+    addOns: "",
+    confirmed: false,
+  });
   const [step, setStep] = useState(1);
   const [stepTitles, setStepTitles] = useState([
     {
@@ -55,6 +64,8 @@ export const Provider = ({ children }) => {
     setStepTitles,
     content,
     setContent,
+    user,
+    setUser,
   };
   return <FormContext.Provider value={data}>{children}</FormContext.Provider>;
 };
