@@ -80,12 +80,30 @@ body,
   border: 1px solid var(--strawberry-red);
 }
 .form-button {
-  background-color: var(--purplish-blue);
+  background-color: var(--marine-blue);
+
   padding: 10px 20px;
   color: var(--white);
   border-radius: 7px;
   transition: all 0.4s;
 }
 .form-button:hover {
-  background-color: var(--marine-blue);
+  background-color: var(--purplish-blue);
+}
+.border-cool-gray {
+  transition: all 0.4s;
+  border: 1px solid var(--cool-gray);
+}
+.border-cool-gray:hover {
+  border: 1px solid var(--purplish-blue);
+}
+.border-purplish {
+  border: 1px solid var(--purplish-blue);
+}
+
+.switchToggle {
+  transform: translateX(-25px);
+}
+.border-marine {
+  border: 1px solid var(--marine-blue);
 }

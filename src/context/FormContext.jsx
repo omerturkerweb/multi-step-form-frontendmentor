@@ -7,14 +7,17 @@ import Step4 from "../components/steps/step4/Step4";
 export const FormContext = createContext();
 
 export const Provider = ({ children }) => {
+  const [planType, setPlanTYpe] = useState("arcade");
+  const [planTime, setPlanTime] = useState("monthly");
   const [user, setUser] = useState({
     name: "",
     mail: "",
     phone: 0,
     plan: "",
     planType: "",
-    addOns: "",
+    addOns: { addon1: false, addon2: false, addon3: false },
     confirmed: false,
+    cost: 9,
   });
   const [step, setStep] = useState(1);
   const [stepTitles, setStepTitles] = useState([
@@ -66,6 +69,10 @@ export const Provider = ({ children }) => {
     setContent,
     user,
     setUser,
+    planType,
+    setPlanTYpe,
+    planTime,
+    setPlanTime,
   };
   return <FormContext.Provider value={data}>{children}</FormContext.Provider>;
 };

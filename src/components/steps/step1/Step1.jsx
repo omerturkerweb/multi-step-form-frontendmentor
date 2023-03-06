@@ -5,6 +5,7 @@ import { FormContext } from "../../../context/FormContext";
 
 export default function Step1() {
   const { step, setStep, user, setUser } = useContext(FormContext);
+
   return (
     <div className="step1-main h-full p-10 ">
       <div className="step-1-title">
