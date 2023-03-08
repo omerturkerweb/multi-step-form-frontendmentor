@@ -30,7 +30,7 @@ export default function Step4() {
             </span>
           </div>
           <div className="plan-price text-[var(--marine-blue)] font-semibold">
-            $9/mo
+            {`$${user.planCost}/${planTime === "monthly" ? "mo" : "yr"}`}
           </div>
         </div>
         <div className="hr h-[0.5px] w-[95%] bg-[var(--light-gray)] rounded-xl mx-auto my-4"></div>
@@ -40,7 +40,9 @@ export default function Step4() {
               <span className="text-sm text-[var(--cool-gray)]">
                 Online Service
               </span>
-              <span className="text-sm text-[var(--cool-gray)]">+$1/mo</span>
+              <span className="text-sm text-[var(--cool-gray)]">
+                {planTime === "monthly" ? <>$1/mo</> : <>$10/yr</>}
+              </span>
             </div>
           ) : null}
           {user.addOns.addon2 ? (
@@ -48,7 +50,10 @@ export default function Step4() {
               <span className="text-sm text-[var(--cool-gray)]">
                 Larger Storage
               </span>
-              <span className="text-sm text-[var(--cool-gray)]">+$2/mo</span>
+              <span className="text-sm text-[var(--cool-gray)]">
+                {" "}
+                {planTime === "monthly" ? <>$2/mo</> : <>$20/yr</>}
+              </span>
             </div>
           ) : null}
           {user.addOns.addon3 ? (
@@ -56,7 +61,10 @@ export default function Step4() {
               <span className="text-sm text-[var(--cool-gray)]">
                 Customizable Profile
               </span>
-              <span className="text-sm text-[var(--cool-gray)]">+$2/mo</span>
+              <span className="text-sm text-[var(--cool-gray)]">
+                {" "}
+                {planTime === "monthly" ? <>$2/mo</> : <>$20/yr</>}
+              </span>
             </div>
           ) : null}
         </div>
@@ -65,7 +73,9 @@ export default function Step4() {
         <span className="text-[var(--cool-gray)]">{`Total (per ${
           planTime == "monthly" ? "month" : "year"
         })`}</span>
-        <span className="text-[var(--purplish-blue)] font-semibold">{`+$${user.cost}/mo`}</span>
+        <span className="text-[var(--purplish-blue)] font-semibold">{`+$${
+          user.planCost + user.addOnCost
+        }/mo`}</span>
       </div>
       <div className="step-3-actions mt-10 flex flex-row items-center justify-between w-[90%]">
         <button
@@ -86,7 +96,7 @@ export default function Step4() {
           }}
           className="form-button"
         >
-          Next Step
+          Confirm
         </button>
       </div>
     </div>

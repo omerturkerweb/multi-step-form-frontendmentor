@@ -23,20 +23,20 @@
 }
 
 html,
-body,
-#root {
-  width: 100%;
+body {
   height: 100%;
+  background-color: var(--magnolia);
 }
 #root {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--magnolia);
   font-family: var(--font-ubuntu);
 }
 .steps {
-  background: url("../images//bg-sidebar-desktop.svg");
+  background: url("../images/bg-sidebar-desktop.svg");
   background-size: cover;
 }
 .step {
@@ -45,9 +45,6 @@ body,
   transition: all 0.5s;
   border: 1px solid transparent;
   user-select: none;
-}
-.step:hover {
-  border: 1px solid var(--pastel-blue);
 }
 
 .step-border {
@@ -106,4 +103,105 @@ body,
 }
 .border-marine {
   border: 1px solid var(--marine-blue);
+}
+
+@media (max-width: 768px) {
+  #root {
+    align-items: start;
+  }
+  html {
+    overflow: hidden;
+  }
+  .step-description {
+    display: none;
+  }
+  .multi-step-main {
+    flex-direction: column;
+    min-width: 90%;
+    width: 100%;
+    min-height: 100%;
+    padding: 0;
+    background-color: var(--magnolia);
+  }
+  .content {
+    width: 100%;
+  }
+  .steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    padding-top: 10%;
+    width: 100%;
+    background: url("../images/bg-sidebar-mobile.svg");
+    max-height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .step {
+    border: none;
+  }
+  .step1-main {
+    background-color: black;
+    min-width: 90%;
+    width: 80%;
+    height: 400px;
+    background-color: var(--white);
+    margin: -80px auto 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.142);
+  }
+  .form-actions {
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    background-color: var(--white);
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 20px;
+  }
+  .form-actions button {
+    padding: 0;
+    margin: 0;
+    padding: 15px;
+    border-radius: 15px;
+  }
+  .input-default,
+  .input-invalid {
+    width: 100% !important;
+  }
+  .step-2-main {
+    gap: 10px;
+    background-color: black;
+    min-width: 90%;
+    width: 80%;
+    height: 450px;
+    background-color: var(--white);
+    margin: -80px auto 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.142);
+  }
+  .step-2-options {
+    flex-direction: column;
+    height: 200px;
+    gap: 10px;
+  }
+
+  .option-arcade,
+  .option-advanced,
+  .option-pro {
+    border-radius: 7px;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 10px;
+  }
+  .description-off {
+  }
 }

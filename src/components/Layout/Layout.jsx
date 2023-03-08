@@ -2,17 +2,15 @@ import { useContext } from "react";
 import { FormContext } from "../../context/FormContext";
 
 export default function Layout() {
-  const { stepTitles, step, setStep, content } = useContext(FormContext);
+  console.log("rendered layout");
+  const { stepTitles, step, content } = useContext(FormContext);
   return (
-    <div className="multi-step-main w-[800px] h-[510px] shadow-xl p-3 bg-[var(--white)] rounded-xl flex flex-row">
+    <div className="multi-step-main w-[800px] min-w-[800px] h-[510px] shadow-xl p-3 bg-[var(--white)] rounded-xl flex flex-row">
       <div className="steps w-[30%] h-[100%] p-6 flex flex-col">
         {stepTitles.map((stepTitle, index) => {
           return (
             <div
               key={index}
-              onClick={() => {
-                setStep(stepTitle.number);
-              }}
               className={
                 stepTitle.number === step
                   ? `step step-${stepTitle.number} flex flex-row items-center gap-x-5 p-3 active-step`

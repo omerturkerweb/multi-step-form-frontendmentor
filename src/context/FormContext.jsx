@@ -3,11 +3,12 @@ import Step1 from "../components/steps/step1/Step1";
 import Step2 from "../components/steps/step2/Step2";
 import Step3 from "../components/steps/step3/Step3";
 import Step4 from "../components/steps/step4/Step4";
+import Step5 from "../components/steps/step5/Step5";
 
 export const FormContext = createContext();
 
 export const Provider = ({ children }) => {
-  const [planType, setPlanTYpe] = useState("arcade");
+  const [planType, setPlanType] = useState("arcade");
   const [planTime, setPlanTime] = useState("monthly");
   const [user, setUser] = useState({
     name: "",
@@ -17,7 +18,9 @@ export const Provider = ({ children }) => {
     planType: "",
     addOns: { addon1: false, addon2: false, addon3: false },
     confirmed: false,
-    cost: 9,
+    planCost: 0,
+    addOnCost: 0,
+    cost: 0,
   });
   const [step, setStep] = useState(1);
   const [stepTitles, setStepTitles] = useState([
@@ -59,6 +62,10 @@ export const Provider = ({ children }) => {
       number: 4,
       component: <Step4 />,
     },
+    {
+      number: 5,
+      component: <Step5 />,
+    },
   ]);
   const data = {
     step,
@@ -70,7 +77,7 @@ export const Provider = ({ children }) => {
     user,
     setUser,
     planType,
-    setPlanTYpe,
+    setPlanType,
     planTime,
     setPlanTime,
   };

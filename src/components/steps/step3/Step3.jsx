@@ -1,9 +1,38 @@
 import { Checkbox } from "@mui/material";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { FormContext } from "../../../context/FormContext";
 
 export default function Step3() {
-  const { user, setUser, setStep } = useContext(FormContext);
+  const { user, setUser, setStep, planTime } = useContext(FormContext);
+  useEffect(() => {
+    setUser((user) => {
+      return { ...user, addOnCost: 0 };
+    });
+    if (user.addOns.addon1) {
+      setUser((user) => {
+        return {
+          ...user,
+          addOnCost: user.addOnCost + (planTime === "monthly" ? 1 : 10),
+        };
+      });
+    }
+    if (user.addOns.addon2) {
+      setUser((user) => {
+        return {
+          ...user,
+          addOnCost: user.addOnCost + (planTime === "monthly" ? 2 : 20),
+        };
+      });
+    }
+    if (user.addOns.addon3) {
+      setUser((user) => {
+        return {
+          ...user,
+          addOnCost: user.addOnCost + (planTime === "monthly" ? 2 : 20),
+        };
+      });
+    }
+  }, [user.addOns.addon1, user.addOns.addon2, user.addOns.addon3]);
   return (
     <div className="step-3-main p-10 flex flex-col gap-y-6">
       <div className="step-3-title">
@@ -57,7 +86,11 @@ export default function Step3() {
             </span>
           </div>
           <div className="online-service-price ml-auto  text-[var(--purplish-blue)] text-[14px]">
-            <span>+1$/mo</span>
+            {planTime === "monthly" ? (
+              <span>+1$/mo</span>
+            ) : (
+              <span>+10$/yr</span>
+            )}
           </div>
         </div>
 
@@ -75,8 +108,8 @@ export default function Step3() {
           }}
           className={
             user.addOns.addon2
-              ? "add-on-online-service select-none flex flex-row items-center justify-start gap-x-5 p-3 cursor-pointer transition-all duration-500 hover:bg-[var(--magnolia)] rounded-xl  border-marine bg-[var(--magnolia)]"
-              : "add-on-online-service select-none flex flex-row items-center justify-start gap-x-5 p-3 cursor-pointer transition-all duration-500 hover:bg-[var(--magnolia)] rounded-xl bg-[var(--white)] border-marine"
+              ? "add-on-larger-storage select-none flex flex-row items-center justify-start gap-x-5 p-3 cursor-pointer transition-all duration-500 hover:bg-[var(--magnolia)] rounded-xl  border-marine bg-[var(--magnolia)]"
+              : "add-on-larger-storage select-none flex flex-row items-center justify-start gap-x-5 p-3 cursor-pointer transition-all duration-500 hover:bg-[var(--magnolia)] rounded-xl bg-[var(--white)] border-marine"
           }
         >
           <Checkbox
@@ -103,7 +136,11 @@ export default function Step3() {
             </span>
           </div>
           <div className="larger-storage-price ml-auto text-[var(--purplish-blue)] text-[14px]">
-            <span>+1$/mo</span>
+            {planTime === "monthly" ? (
+              <span>+$2/mo</span>
+            ) : (
+              <span>+$20/yr</span>
+            )}
           </div>
         </div>
 
@@ -121,8 +158,8 @@ export default function Step3() {
           }}
           className={
             user.addOns.addon3
-              ? "add-on-online-service select-none flex flex-row items-center justify-start gap-x-5 p-3 cursor-pointer transition-all duration-500 hover:bg-[var(--magnolia)] rounded-xl  border-marine bg-[var(--magnolia)]"
-              : "add-on-online-service select-none flex flex-row items-center justify-start gap-x-5 p-3 cursor-pointer transition-all duration-500 hover:bg-[var(--magnolia)] rounded-xl bg-[var(--white)] border-marine"
+              ? "add-on-customizable-profile select-none flex flex-row items-center justify-start gap-x-5 p-3 cursor-pointer transition-all duration-500 hover:bg-[var(--magnolia)] rounded-xl  border-marine bg-[var(--magnolia)]"
+              : "add-on-customizable-profile select-none flex flex-row items-center justify-start gap-x-5 p-3 cursor-pointer transition-all duration-500 hover:bg-[var(--magnolia)] rounded-xl bg-[var(--white)] border-marine"
           }
         >
           <Checkbox
@@ -149,7 +186,11 @@ export default function Step3() {
             </span>
           </div>
           <div className="customizable-profile-price ml-auto text-[var(--purplish-blue)] text-[14px]">
-            <span>+2$/mo</span>
+            {planTime === "monthly" ? (
+              <span>+$2/mo</span>
+            ) : (
+              <span>+$20/yr</span>
+            )}
           </div>
         </div>
       </div>
@@ -169,14 +210,6 @@ export default function Step3() {
           onClick={() => {
             setStep((step) => {
               return step + 1;
-            });
-            let total = 9;
-            if (user.addOns.addon1 === true) total += 1;
-            if (user.addOns.addon2 === true) total += 2;
-            if (user.addOns.addon3 === true) total += 2;
-
-            setUser((user) => {
-              return { ...user, cost: total };
             });
           }}
           className="form-button"

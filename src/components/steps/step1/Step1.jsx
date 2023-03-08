@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { FormContext } from "../../../context/FormContext";
 
 export default function Step1() {
-  const { step, setStep, user, setUser } = useContext(FormContext);
+  const { setStep, setUser } = useContext(FormContext);
 
   return (
     <div className="step1-main h-full p-10 ">
@@ -55,7 +55,7 @@ export default function Step1() {
                     onChange={handleChange}
                     id="name"
                     className={errors.name ? "input-invalid" : "input-default"}
-                    placeholder="Please type your name .."
+                    placeholder="e.g. Stephen King"
                     type="text"
                   />
                 </div>
@@ -75,7 +75,7 @@ export default function Step1() {
                     onChange={handleChange}
                     id="mail"
                     className={errors.mail ? "input-invalid" : "input-default"}
-                    placeholder="Please type your e-mail address .."
+                    placeholder="e.g. stephenking@lorem.com"
                     type="text"
                   />
                 </div>
