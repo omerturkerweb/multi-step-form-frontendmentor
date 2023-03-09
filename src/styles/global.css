@@ -107,7 +107,7 @@ body {
 
 @media (max-width: 768px) {
   #root {
-    align-items: start;
+    align-items: flex-start;
   }
   html {
     overflow: hidden;
@@ -130,7 +130,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     padding-top: 10%;
     width: 100%;
     background: url("../images/bg-sidebar-mobile.svg");
@@ -160,7 +160,7 @@ body {
     width: 100%;
     margin: 0;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     padding: 20px;
   }
@@ -179,7 +179,7 @@ body {
     background-color: black;
     min-width: 90%;
     width: 80%;
-    height: 450px;
+    height: 520px;
     background-color: var(--white);
     margin: -80px auto 0 auto;
     border-radius: 20px;
@@ -187,8 +187,26 @@ body {
   }
   .step-2-options {
     flex-direction: column;
-    height: 200px;
+    height: 180px;
     gap: 10px;
+  }
+  .step-2-actions {
+    position: absolute;
+    bottom: -90px;
+    right: 0;
+    background-color: var(--white);
+    margin-right: -50px;
+    width: 120vw;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .step-2-actions button:nth-child(1) {
+    margin-left: 15%;
+  }
+  .step-2-actions button:nth-child(2) {
+    margin-right: 10%;
   }
 
   .option-arcade,
@@ -199,9 +217,86 @@ body {
     margin: 0;
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 10px;
   }
-  .description-off {
+  .plan-time-section {
+    margin-top: 140px;
+  }
+  .step-3-main {
+    gap: 10px;
+    background-color: black;
+    min-width: 90%;
+    width: 80%;
+    height: 370px;
+    background-color: var(--white);
+    margin: -80px auto 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.142);
+  }
+
+  .add-on-online-service,
+  .add-on-larger-storage,
+  .add-on-customizable-profile {
+    gap: 0;
+    width: 100%;
+    min-width: 100%;
+    padding: 5px;
+  }
+  .add-on-title {
+    font-size: 15px;
+  }
+  .add-on-price {
+    font-size: 11px;
+    padding-right: 4px;
+  }
+  .add-on-description {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .step-3-add-ons {
+    gap: 16px;
+  }
+  .step-3-actions {
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    background-color: var(--white);
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  .step-4-main {
+    gap: 10px;
+    background-color: black;
+    min-width: 90%;
+    width: 80%;
+    height: 450px;
+    background-color: var(--white);
+    margin: -80px auto 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.142);
+  }
+  .step-4-details {
+    width: 100%;
+  }
+  .total-basket {
+    width: 95%;
+    margin-top: 20px;
+    padding: 0 2px 0 5px;
+  }
+  .step-5-main {
+    gap: 10px;
+    background-color: black;
+    min-width: 90%;
+    width: 80%;
+    height: 450px;
+    background-color: var(--white);
+    margin: -80px auto 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.142);
   }
 }

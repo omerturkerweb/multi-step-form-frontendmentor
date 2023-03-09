@@ -78,18 +78,18 @@ export default function Step3() {
             checked={user.addOns.addon1}
           />
           <div className="online-service-description">
-            <h3 className="text-[var(--marine-blue)] text-base font-[700]">
+            <h3 className="add-on-title text-[var(--marine-blue)] text-base font-[700]">
               Online service
             </h3>
-            <span className="text-sm text-[var(--cool-gray)]">
+            <span className="add-on-description text-sm text-[var(--cool-gray)]">
               Access to multiplayer games
             </span>
           </div>
           <div className="online-service-price ml-auto  text-[var(--purplish-blue)] text-[14px]">
             {planTime === "monthly" ? (
-              <span>+1$/mo</span>
+              <span className="add-on-price">+1$/mo</span>
             ) : (
-              <span>+10$/yr</span>
+              <span className="add-on-price">+10$/yr</span>
             )}
           </div>
         </div>
@@ -128,18 +128,18 @@ export default function Step3() {
             checked={user.addOns.addon2}
           />
           <div className="larger-storage-description">
-            <h3 className="text-[var(--marine-blue)] text-base font-[700]">
+            <h3 className="add-on-title text-[var(--marine-blue)] text-base font-[700]">
               Larger-storage
             </h3>
-            <span className="text-sm text-[var(--cool-gray)]">
+            <span className="add-on-description text-sm text-[var(--cool-gray)]">
               Extra 1TB of cloud save
             </span>
           </div>
           <div className="larger-storage-price ml-auto text-[var(--purplish-blue)] text-[14px]">
             {planTime === "monthly" ? (
-              <span>+$2/mo</span>
+              <span className="add-on-price">+$2/mo</span>
             ) : (
-              <span>+$20/yr</span>
+              <span className="add-on-price">+$20/yr</span>
             )}
           </div>
         </div>
@@ -178,18 +178,18 @@ export default function Step3() {
             checked={user.addOns.addon3}
           />
           <div className="customizable-profile-description">
-            <h3 className="text-[var(--marine-blue)] text-base font-[700]">
+            <h3 className="add-on-title text-[var(--marine-blue)] text-base font-[700]">
               Customizable-profile
             </h3>
-            <span className="text-sm text-[var(--cool-gray)]">
+            <span className="add-on-description text-sm text-[var(--cool-gray)]">
               Custom theme on your profile
             </span>
           </div>
           <div className="customizable-profile-price ml-auto text-[var(--purplish-blue)] text-[14px]">
             {planTime === "monthly" ? (
-              <span>+$2/mo</span>
+              <span className="add-on-price">+$2/mo</span>
             ) : (
-              <span>+$20/yr</span>
+              <span className="add-on-price">+$20/yr</span>
             )}
           </div>
         </div>

@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { FormContext } from "../../context/FormContext";
 
 export default function Layout() {
-  console.log("rendered layout");
   const { stepTitles, step, content } = useContext(FormContext);
   return (
     <div className="multi-step-main w-[800px] min-w-[800px] h-[510px] shadow-xl p-3 bg-[var(--white)] rounded-xl flex flex-row">
@@ -43,7 +42,7 @@ export default function Layout() {
         {content.map((c, index) => {
           if (c.number === step) {
             return (
-              <div className="h-full" key={index}>
+              <div className="h-full w-full" key={index}>
                 {c.component}
               </div>
             );

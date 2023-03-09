@@ -14,7 +14,7 @@ export default function Step4() {
           Double-check everything looks OK before confirming
         </span>
       </div>
-      <div className="step-4-details w-[90%] p-3 rounded-md bg-[var(--magnolia)]">
+      <div className="step-4-details  w-[90%] p-3 rounded-md bg-[var(--magnolia)]">
         <div className="details-head flex flex-row items-center justify-between">
           <div className="plan-details">
             <h3 className="text-[var(--marine-blue)] text-base font-[700]">{`${
@@ -75,7 +75,7 @@ export default function Step4() {
         })`}</span>
         <span className="text-[var(--purplish-blue)] font-semibold">{`+$${
           user.planCost + user.addOnCost
-        }/mo`}</span>
+        }/${planTime === "monthly" ? "mo " : "yr"}`}</span>
       </div>
       <div className="step-3-actions mt-10 flex flex-row items-center justify-between w-[90%]">
         <button

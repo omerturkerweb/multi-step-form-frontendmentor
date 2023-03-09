@@ -9,12 +9,14 @@ export default function Step2() {
     switch (planType) {
       case "arcade":
         clickArcadeHandle();
+        break;
       case "advanced":
         clickAdvancedHandle();
         break;
       case "pro":
         clickProHandle();
         break;
+      default:
     }
   }, [planTime]);
   const clickArcadeHandle = () => {
@@ -48,7 +50,6 @@ export default function Step2() {
         return { ...user, planCost: 9 };
       });
     } else {
-      console.log("pro Yearly");
       setUser((user) => {
         return { ...user, planCost: 150 };
       });
@@ -86,7 +87,7 @@ export default function Step2() {
               <span className="text-[var(--cool-gray)] text-sm">$90/yr</span>
             )}
             {planTime === "yearly" ? (
-              <span className=" description-off text-xs text-[var(--marine-blue)] mt-2 font-[500]">
+              <span className=" description-off   text-xs text-[var(--marine-blue)] mt-2 font-[500]">
                 2 months free
               </span>
             ) : null}
@@ -149,7 +150,7 @@ export default function Step2() {
           </div>
         </div>
       </div>
-      <div className="plan-time-section  select-none rounded-md flex flex-row items-center justify-center gap-x-5 bg-[var(--magnolia)] py-3">
+      <div className="plan-time-section select-none rounded-md flex flex-row items-center justify-center gap-x-5 bg-[var(--magnolia)] py-3">
         <span
           onClick={() => {
             setPlanTime("monthly");
@@ -186,7 +187,7 @@ export default function Step2() {
           Yearly
         </span>
       </div>
-      <div className="step-2-actions mt-10 absolute   -bottom-16 right-0 flex flex-row items-center justify-between w-full px-10">
+      <div className="step-2-actions mt-10 absolute -bottom-16 right-0 flex flex-row items-center justify-between w-full px-10">
         <button
           onClick={() => {
             setStep((step) => {
